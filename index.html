@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ice Breaking Acak</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; background: #f0f4f8; }
+    .card { background: white; padding: 30px; border-radius: 12px; max-width: 500px; margin: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    button { background: #2563eb; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 8px; cursor: pointer; margin-top: 20px; }
+    button:hover { background: #1d4ed8; }
+    #pertanyaan { font-size: 20px; font-weight: bold; color: #1e293b; min-height: 60px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🎲 Ice Breaking Hari Ini</h2>
+    <p id="pertanyaan">Klik tombol di bawah untuk memunculkan pertanyaan!</p>
+    <button onclick="acakPertanyaan()">Acak Pertanyaan</button>
+  </div>
+
+  <script>
+    const daftarPertanyaan = [
+      "Kalau kamu bisa punya satu kekuatan super hari ini, mau pilih apa?",
+      "Apa makanan yang paling menggambarkan suasana hatimu saat ini?",
+      "Sebutkan 1 barang di dekatmu yang warnanya biru!",
+      "Kalau liburan gratis sekarang juga, mau pergi ke mana?",
+      "Tunjukkan ekspresi wajah paling kaget ke kamera!"
+    ];
+
+    function acakPertanyaan() {
+      const indeks = Math.floor(Math.random() * daftarPertanyaan.length);
+      document.getElementById("pertanyaan").innerText = daftarPertanyaan[indeks];
+    }
+  </script>
+</body>
+</html>
